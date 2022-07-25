@@ -174,6 +174,10 @@
 // Document Object Model
 
 
+
+
+console.log(guess.value);
+
 const heading = document.querySelector(".heading");
 console.log(heading.innerHTML);
 heading.innerHTML = "Hello World";
