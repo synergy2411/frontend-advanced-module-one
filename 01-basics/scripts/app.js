@@ -372,22 +372,169 @@
 // console.log(kitty.getDetails())
 
 
-let userOne = {
-    age: 32,
-    address: "201 Main Road"
-}
+// let userOne = {
+//     age: 32,
+//     address: "201 Main Road"
+// }
 
-let userTwo = Object.create(userOne);
-
-
-console.log(userOne.isPrototypeOf(userTwo))
-console.log(userTwo.isPrototypeOf(userOne))
-
-console.log(Object.prototype.isPrototypeOf(userOne))
-console.log(Object.prototype.isPrototypeOf(userTwo))
+// let userTwo = Object.create(userOne);
 
 
-console.log(userTwo.hasOwnProperty('age'))
-console.log(userOne.hasOwnProperty('age'))
+// console.log(userOne.isPrototypeOf(userTwo))
+// console.log(userTwo.isPrototypeOf(userOne))
 
-console.log(userOne);
+// console.log(Object.prototype.isPrototypeOf(userOne))
+// console.log(Object.prototype.isPrototypeOf(userTwo))
+
+
+// console.log(userTwo.hasOwnProperty('age'))
+// console.log(userOne.hasOwnProperty('age'))
+
+// console.log(userOne);
+
+
+
+// 2
+
+
+// function numOfOccurence(letter) {
+//     let count = 0;
+//     for (let i = 0; i < this.length; i++) {
+//         if (letter.toLowerCase() === this.charAt(i).toLowerCase()) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// String.prototype.numOfOccurence = numOfOccurence;
+
+// let str = "Hello JavaScript"
+// let strTwo = "Welcome to web programming"
+// console.log(str.numOfOccurence("a"));     // 2
+// console.log(strTwo.numOfOccurence("w"));  
+
+
+
+
+// Define Property
+// "use strict";
+
+// let user = {}
+
+// Object.defineProperty(user, "email", {
+//     value: 'abc@test.com',
+//     writable: false
+// })
+
+// console.log(user);
+
+// user.email = "test@test.com";
+
+// console.log(user);
+
+
+
+// let numbers = new Array(10, 10);
+
+// let numbers = [ ];
+
+// numbers.
+
+// console.log(numbers.length);
+
+
+
+
+// ARRAY
+
+// let myBooks = ["book1", "book2", "book3"];
+
+// let box = {
+//     books: myBooks,
+//     addBook: function (newBook) {
+//         this.books.push(newBook);
+//     }
+// }
+
+
+// box.addBook("Book4");
+
+// console.log(box.books.length)       // 4
+
+// console.log(myBooks.length);        // 4
+
+
+// let arr = ["test@test.com", 32, true, function () {
+//     console.log("Called");
+// }, {
+//         name: "Foo",
+//     }, ["Bar", "Bam", "Baz"]]
+
+
+// arr[3]()
+// console.log(arr[4].name);
+// console.log(arr[4]['name']);
+// console.log(arr[5][0]);
+
+
+let users = [
+    {
+        email: "test1@test.com",
+        age: 32
+    }, {
+        email: "test2@test.com",
+        age: 33
+    }, {
+        email: "test3@test.com",
+        age: 34
+    }
+]
+
+
+// for (let user of users) {
+//     console.log(user.age);
+// }
+
+
+
+
+
+let numbers = [2, 1, 15, 24, 6, 30];
+
+// TO MUTATE ORIGINAL ARRAY
+// PUSH
+// numbers.push(50);
+
+// UNSHIFT
+// numbers.unshift(11);
+
+// POP
+// numbers.pop()
+
+// SHIFT
+// numbers.shift()
+
+// SPLICE
+// numbers.splice(0, 2)
+// [1,2,6, 15,24,30]
+
+// SORT
+// numbers.sort(function (a, b) {
+//     // return -(a - b)
+//     if (a > b) {
+//         return -1;
+//     } else if (a < b) {
+//         return 1
+//     } else {
+//         return 0
+//     }
+// })
+// REVERSE
+// numbers.reverse()
+
+// FILL
+// numbers.fill(0, 1, 4)
+
+console.log(numbers);
+
