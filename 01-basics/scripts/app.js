@@ -51,7 +51,7 @@
 
 
 
-// Creational Phase - allocates the memory 
+// Creational Phase - allocates the memory
 
 // Executional Phase - executes the code
 
@@ -176,8 +176,218 @@
 
 
 
-console.log(guess.value);
+// console.log(guess.value);
 
-const heading = document.querySelector(".heading");
-console.log(heading.innerHTML);
-heading.innerHTML = "Hello World";
+// const heading = document.querySelector(".heading");
+// console.log(heading.innerHTML);
+// heading.innerHTML = "Hello World";
+
+
+
+
+// Back tick -> ` ` || ' ' || " "
+
+// let username = "John Doe"
+
+// let greet = `Hello ${username}`
+
+// let sayHi = "Hi " + username;
+// "use strict";
+
+
+
+
+
+
+
+
+
+// Objects =
+//  - Literal
+
+// let box = {
+//     width: 4,
+//     height: 8,
+//     color: "grey",
+//     destination: {
+//         city: "Pune",
+//         street: "201, Main Road, Wakad"
+//     },
+//     books: ["book1", "book2", "book3"],
+//     "is Delivered": false,
+//     addBook: function (newBook) {
+//         this.books.push(newBook);
+//     }
+// }
+// // dynamic property adding
+// box.volume = box.width * box.height;
+
+// // Square bracket notation
+// console.log("Delivery : ", box['is Delivered']);
+// console.log(box['color']);
+
+// // Dot notation
+// console.log(box.volume);
+// console.log(box);
+
+// box.addBook("book4")
+
+// console.log(box.books.length);          // ?
+
+// Reference vs Primitive
+
+// let x = 201;
+// let y = x;
+
+// x = 301;
+
+// console.log(x, y);
+
+
+
+// let x = {
+//     email: "test@test.com"
+// }
+
+// let y = x ;
+// y.age = 32
+// x.name = "foo";
+
+// console.log("X ", x);
+// console.log("Y ", y);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  - Contructor
+
+// function Person(firstName, lastName) {
+//     // let this = {};
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.getFullName = function () {
+//         return `Hello ${this.firstName} ${this.lastName}`;
+//     }
+//     // return this;
+// }
+
+
+// class Person{
+//     constructor(firstName, lastName){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     getDetails(){
+//         return `Welcome ${this.firstName} ${this.lastName}`;
+//     }
+// }
+
+
+
+// let foo = new Person("Foo", "Bar");
+// console.log(foo.getFullName())
+
+// let bar = new Person("Bar", "Baz");
+// console.log(bar.getFullName());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  - Instance -- Object.create()
+
+// let shoe = {
+//     size: 8,
+//     construction: "Sneaker"
+// }
+
+// let magicShoe = Object.create(shoe);
+// magicShoe.cize = 11;
+// console.log(magicShoe.size);
+// console.log(shoe);
+
+
+
+// function Animal(legs, species, harbivorous) {
+//     this.harbivorous = harbivorous;
+//     this.legs = legs;
+//     this.species = species;
+//     // this.getDetails = function(){
+//     //     return `${this.species} is having ${this.legs} legs!`
+//     // }
+// }
+
+// Animal.prototype.getDetails = function () {
+//     return `${this.species} is having ${this.legs} legs!`
+// }
+
+
+// let kitty = new Animal(4, "Cat", false);
+// console.log(kitty.getDetails())
+
+
+let userOne = {
+    age: 32,
+    address: "201 Main Road"
+}
+
+let userTwo = Object.create(userOne);
+
+
+console.log(userOne.isPrototypeOf(userTwo))
+console.log(userTwo.isPrototypeOf(userOne))
+
+console.log(Object.prototype.isPrototypeOf(userOne))
+console.log(Object.prototype.isPrototypeOf(userTwo))
+
+
+console.log(userTwo.hasOwnProperty('age'))
+console.log(userOne.hasOwnProperty('age'))
+
+console.log(userOne);
