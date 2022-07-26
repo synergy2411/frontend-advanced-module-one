@@ -412,7 +412,7 @@
 // let str = "Hello JavaScript"
 // let strTwo = "Welcome to web programming"
 // console.log(str.numOfOccurence("a"));     // 2
-// console.log(strTwo.numOfOccurence("w"));  
+// console.log(strTwo.numOfOccurence("w"));
 
 
 
@@ -478,19 +478,18 @@
 // console.log(arr[5][0]);
 
 
-let users = [
-    {
-        email: "test1@test.com",
-        age: 32
-    }, {
-        email: "test2@test.com",
-        age: 33
-    }, {
-        email: "test3@test.com",
-        age: 34
-    }
-]
-
+// let users = [
+//     {
+//         email: "test1@test.com",
+//         age: 32
+//     }, {
+//         email: "test2@test.com",
+//         age: 33
+//     }, {
+//         email: "test3@test.com",
+//         age: 34
+//     }
+// ]
 
 // for (let user of users) {
 //     console.log(user.age);
@@ -500,7 +499,7 @@ let users = [
 
 
 
-let numbers = [2, 1, 15, 24, 6, 30];
+// let numbers = [2, 1, 15, 24, 6, 30];
 
 // TO MUTATE ORIGINAL ARRAY
 // PUSH
@@ -536,5 +535,5 @@ let numbers = [2, 1, 15, 24, 6, 30];
 // FILL
 // numbers.fill(0, 1, 4)
 
-console.log(numbers);
+// console.log(numbers);
 
