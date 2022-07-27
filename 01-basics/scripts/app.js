@@ -762,24 +762,181 @@
 
 
 
-// Function can be supplied as a parameter - 
+// Function can be supplied as a parameter -
 // - HOF
 // - Callback
 
 
-function greet(err, name) {
-    if (err) {
-        return console.log(err);
-    }
-    console.log("Hello " + name);
+// function greet(err, name) {
+//     if (err) {
+//         return console.log(err);
+//     }
+//     console.log("Hello " + name);
+// }
+
+// function englishGreet(arr, cb) {
+//     if (arr.length > 2) {
+//         cb(new Error("Somthing bad happened"))
+//     } else {
+//         cb(null, "Jenny Doe")
+//     }
+// }
+
+// englishGreet([2, 3, 6, 9], greet)
+
+
+
+// ARROW FUNCTION 
+// (argsList) => Function Body
+// (argsList) => {
+//     Function Body
+// return 
+// }
+
+// Sweet and clean syntax
+
+// 'this' keyword
+// 'arguments' keyword
+// 'new' operator - can't call
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+// let sum = function (a, b) {
+//     return a + b
+// }
+
+// let addition = (a, b) => {
+//     console.log(a, b);
+//     return a + b
+// }
+
+
+// let user = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     getFullName: function () {
+//         // this
+//         let self = this;
+//         function nestedFn() {
+//             // this
+//             return `Hello from ${that.firstName} ${that.lastName}`
+//         }
+//         return nestedFn()
+//     }
+// }
+
+
+// let user = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     getFullName: function () {
+//         return () => `Hello from ${this.lastName} ${this.firstName}`
+//     }
+// }
+
+
+// console.log(user.getFullName()())
+
+
+
+// function demo() {
+//     console.log(arguments)
+// }
+
+// const demo1 = () => console.log(arguments)
+
+// let d = new demo(1, true, "32", {})
+
+
+// let d1 = new demo1(2, true)
+
+
+// function add(a, b, c) {
+//     return a + b + c
+// }
+
+// add(10,)
+
+// function add(a) {
+//     return function (b) {
+//         return function (c) {
+//             return a + b + c
+//         }
+//     }
+// }
+
+
+// const addition = a => b => c => a + b + c;
+
+// const levelOne = addition(10);
+
+// const levelTwo = levelOne(15);
+// console.log(levelTwo(18));
+
+// const levelThree = levelOne(25);
+// console.log(levelThree(24));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CLOSURE
+
+// function testClosure() {
+//     let x = 4;
+//     return function () {
+//         return ++x;
+//     }
+// }
+
+// let nestedFn = testClosure()
+// console.log(nestedFn());
+// console.log(nestedFn());            // ?
+// console.log(nestedFn());            // ?
+
+
+// const buildTicket = transport => {
+//     let numOfPassengers = 0;
+//     return (name) => `Hello ${name}, You're going via ${transport}
+//         And Your ticket ID #${++numOfPassengers}`
+// }
+
+// let ship = buildTicket("Ship")
+
+// console.log(ship("John"))
+// console.log(ship("Jenny"))
+// console.log(ship("James"))
+
+// let kang = buildTicket("Kangaroo");
+// console.log(kang("X"))
+// console.log(kang("Y"))
+
+
+
+
+
+let x = 101;
+
+function a() {
+    console.log(x);
+    b();
 }
 
-function englishGreet(arr, cb) {
-    if (arr.length > 2) {
-        cb(new Error("Somthing bad happened"))
-    } else {
-        cb(null, "Jenny Doe")
-    }
+function b() {
+    console.log(x);
 }
 
-englishGreet([2, 3, 6, 9], greet)
+a();
