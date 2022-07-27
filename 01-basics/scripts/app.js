@@ -541,18 +541,18 @@
 
 
 
-let users = [
-    {
-        email: "test1@test.com",
-        age: 32
-    }, {
-        email: "test2@test.com",
-        age: 33
-    }, {
-        email: "test3@test.com",
-        age: 34
-    }
-]
+// let users = [
+//     {
+//         email: "test1@test.com",
+//         age: 32
+//     }, {
+//         email: "test2@test.com",
+//         age: 33
+//     }, {
+//         email: "test3@test.com",
+//         age: 34
+//     }
+// ]
 
 // MAP
 // let userArrayWithRetirement = users.map(function (value, index, array) {
@@ -679,7 +679,7 @@ let users = [
 
 
 
-let friends = ["foo", "bar", "bam", "baz"]
+// let friends = ["foo", "bar", "bam", "baz"]
 
 // includes
 // console.log(friends.includes("zas"))
@@ -699,7 +699,7 @@ let friends = ["foo", "bar", "bam", "baz"]
 //     console.log("My Good friends - ", value);
 // })
 
-let numbers = [2, 4, 5, 7, 3, 1]
+// let numbers = [2, 4, 5, 7, 3, 1]
 // reduce
 // let reducerValue = numbers.reduce(function (accumValue, currValue) {
 //     console.log("---------------------");
@@ -716,4 +716,70 @@ let numbers = [2, 4, 5, 7, 3, 1]
 
 // join
 
-console.log(numbers.join("-"))
+// console.log(numbers.join("-"))
+
+
+
+
+
+
+
+
+
+// FUNCTION
+
+// const addition = function (num1, num2) {
+//     return num1 + num2;
+// }
+
+// // console.log(add(2, 5));
+// console.log(addition(4, 7));
+
+
+// IIFE : Immediately Invoked Function Expression
+
+// (function () {
+//     console.log("Hello form IIFE");
+// }())
+
+
+
+// Function can be nested
+
+// function mystery() {
+//     var chooseNumber = function () {
+//         return 7;
+//     }
+//     return chooseNumber;
+//     var chooseNumber = function () {
+//         return 12;
+//     }
+// }
+
+// let nestedFn = mystery();
+
+// console.log(nestedFn());
+
+
+
+// Function can be supplied as a parameter - 
+// - HOF
+// - Callback
+
+
+function greet(err, name) {
+    if (err) {
+        return console.log(err);
+    }
+    console.log("Hello " + name);
+}
+
+function englishGreet(arr, cb) {
+    if (arr.length > 2) {
+        cb(new Error("Somthing bad happened"))
+    } else {
+        cb(null, "Jenny Doe")
+    }
+}
+
+englishGreet([2, 3, 6, 9], greet)
