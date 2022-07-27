@@ -14,11 +14,11 @@ function registerListenerForCheckBox() {
         const position = todoList.findIndex(function (todo) { return todo.id === selectedItemId })
         if (event.target.checked) {
             todoList[position] = "done"
-            closestLi.querySelector(".span-status").innerHTML = "done"
+            closestLi.querySelector(".span-status").innerHTML = todoList[position].status
             closestLi.querySelector(".new-todo-label").style.textDecoration = "line-through"
         } else {
             todoList[position] = "pending"
-            closestLi.querySelector(".span-status").innerHTML = "pending"
+            closestLi.querySelector(".span-status").innerHTML = todoList[position].status
             closestLi.querySelector(".new-todo-label").style.textDecoration = "none"
         }
     })
@@ -40,14 +40,15 @@ function createUI(todos) {
         `
         liElement.setAttribute("id", todo.id)
         listContainer.prepend(liElement)
-        registerListenerForCheckBox();
-        registerListenerForDeleteButton();
     }
+    registerListenerForCheckBox();
+    registerListenerForDeleteButton();
 }
 
 btnAdd.addEventListener("click", function () {
     const newItem = {
-        id: "10" + (todoList.length + 1),
+        // id: "10" + (todoList.length + 1),
+        id: Date.now().toString(),
         label: txtLabel.value,
         status: "pending"
     }
@@ -55,3 +56,4 @@ btnAdd.addEventListener("click", function () {
     txtLabel.value = '';
     createUI(todoList)
 })
+
