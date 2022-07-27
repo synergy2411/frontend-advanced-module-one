@@ -537,3 +537,142 @@
 
 // console.log(numbers);
 
+
+
+
+
+let users = [
+    {
+        email: "test1@test.com",
+        age: 32
+    }, {
+        email: "test2@test.com",
+        age: 33
+    }, {
+        email: "test3@test.com",
+        age: 34
+    }
+]
+
+// MAP
+// let userArrayWithRetirement = users.map(function (value, index, array) {
+//     // console.log(value, index, array);
+//     return {
+//         email: value.email,
+//         retirementAge: 60 - value.age
+//     }
+// })
+
+// console.log(userArrayWithRetirement);
+// console.log(users);
+
+// FILTER
+// let filteredArray = users.filter(function (user) {
+//     return user.age > 33
+// })
+
+// console.log(filteredArray);
+
+// SLICE
+// const slicedArray = users.slice(2, 2)
+// console.log(slicedArray);
+
+
+
+// CONCAT
+// const concatArray = users.concat([{ email: "new@email.com", age: 40 }])
+// console.log(concatArray);
+
+
+// INDEXOF
+// const position = users.indexOf({ email: "test1@test.com", age: 32 })
+// console.log(position);
+
+// let fruits = ["apple", "kiwi", "guava"]
+// const position = fruits.indexOf("kiwi")
+// console.log(position);
+
+
+
+// FINDINDEX
+// const position = users.findIndex(function (user) {
+//     return user.age === 34
+// })
+
+// console.log(position);
+
+// FIND
+// const userFound = users.find(function (user) {
+//     return user.age >= 33
+// })
+
+// console.log(userFound);
+
+"use strict";
+let todoList = [];
+
+const btnAdd = document.querySelector(".btn-add")
+const inputLabel = document.querySelector(".input-item-label")
+const container = document.querySelector(".items");
+
+function deleteItemById(id) {
+    todoList = todoList.filter(function (todo) {
+        return todo.id !== id
+    })
+    createUI(todoList)
+}
+
+function registerListener(btnId) {
+    let btnDelete = document.querySelector(`.${btnId}`)
+    btnDelete.addEventListener("click", function (event) {
+        deleteItemById(event.target.closest(".list-item").id);
+    })
+}
+
+function registerListenerForCheckBox(checkStatusClass) {
+    let checkStatus = document.querySelector("." + checkStatusClass);
+    checkStatus.addEventListener("change", function (event) {
+        const closestDiv = event.target.closest(".list-item");
+        const position = todoList.findIndex(function (todo) { return todo.id === closestDiv.id })
+        if (event.target.checked) {
+            todoList[position].status = "done"
+            closestDiv.querySelector(".list-item-label").style.textDecoration = "line-through"
+        } else {
+            todoList[position].status = "pending"
+            closestDiv.querySelector(".list-item-label").style.textDecoration = "none"
+        }
+    })
+}
+
+function createUI(todos) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
+    for (let todo of todos) {
+        const liElement = document.createElement("li");
+        liElement.innerHTML = `
+                <div class="list-item" id=${todo.id}>
+                <div>
+                <input type='checkbox' class=status-${todo.id} />
+                <span class="list-item-label"> ${todo.label.toUpperCase()}  </span>
+                </div>
+                <button class='btn-delete-${todo.id}'>DELETE</button>
+                </div>
+            `;
+        container.prepend(liElement)
+        registerListener(`btn-delete-${todo.id}`)
+        registerListenerForCheckBox(`status-${todo.id}`)
+    }
+}
+
+btnAdd.addEventListener("click", function () {
+    const newItem = {
+        id: '10' + (todoList.length + 1),
+        label: inputLabel.value,
+        status: "pending"
+    }
+    todoList.push(newItem)
+    inputLabel.value = '';
+    container.innerHTML = '';
+    createUI(todoList)
+})
