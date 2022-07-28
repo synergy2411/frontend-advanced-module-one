@@ -928,15 +928,90 @@
 
 
 
-let x = 101;
+// let x = 101;
 
-function a() {
-    console.log(x);
-    b();
+// function a() {
+//     // let x = 201;
+//     console.log(x);     // 201
+//     b();
+
+//     function b() {
+//         // let x = 301;
+//         console.log(x);         // 301
+//     }
+// }
+
+// // function b() {
+// //     console.log(x);         // 101
+// // }
+
+// a();
+
+
+
+
+// BIND, CALL, APPLY
+
+
+// - bind() returns the bounded function
+
+// let userOne = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     getFullName: function () {
+//         return `Hello ${this.lastName} ${this.firstName}`
+//     }
+// }
+
+// let userTwo = {
+//     firstName: "Jenny",
+//     lastName: "Doe"
+// }
+
+// let boundedFn = userOne.getFullName.bind(userTwo)
+
+// console.log(boundedFn());
+
+// console.log(userOne.getFullName());
+
+
+
+// function greet() {
+//     return `Hello ${this.username}`;
+// }
+
+// let user = {
+//     username: "Foo"
+// }
+
+// const boundedFunc = greet.bind(user)
+
+// console.log(boundedFunc());
+
+// console.log(greet())
+
+
+
+
+
+function greet(language) {
+    if (language === 'english') {
+        return `Hello ${this.name}`
+    } else {
+        return `Hola ${this.name}`
+    }
 }
 
-function b() {
-    console.log(x);
+
+let userOne = {
+    name: "Foo"
 }
 
-a();
+let userTwo = { name: "Bar" }
+
+// console.log(greet.call(userOne, 'english'))
+// console.log(greet.call(userTwo, 'french'))
+
+
+console.log(greet.apply(userOne, ['english']))
+console.log(greet.apply(userTwo, ['french']))
