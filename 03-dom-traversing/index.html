@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boilerplate Code</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    /> -->
+  </head>
+
+  <body>
+    <div>
+      <section>
+        <div>
+          <p>This is first division paragraph</p>
+          <ul class="nav">
+            <!-- Starting Navigation Link -->
+            <li class="nav-item">
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section section--home" id="home">Home Page</section>
+      <section class="section section--about" id="about">About Page</section>
+      <section class="section section--contact" id="contact">
+        Contact Page
+        <form onsubmit="onLogin(event)">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </form>
+      </section>
+    </div>
+    <style>
+      section {
+        height: 350px;
+      }
+    </style>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
